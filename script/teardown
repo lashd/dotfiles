@@ -2,6 +2,8 @@
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd)
 
+set -e 
+
 source "${DOTFILES_ROOT}/script/functions/all.sh"
 
 run_teardown_files () {
