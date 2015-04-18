@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+cd "$(dirname "$0")/.."
+DOTFILES_ROOT=$(pwd)
+
+source "${DOTFILES_ROOT}/script/functions/all.sh"
+
+run_teardown_files () {
+  echo 'tearing down'
+
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name 'teardown.sh')
+  do
+    info "running ${src}"
+    bash -e  ${src} 
+  done
+}
+run_teardown_files
+
+echo ''
+echo 'Everything torndown'
