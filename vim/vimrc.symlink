@@ -2,3 +2,8 @@ syntax on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+" tabs
+set expandtab
+set shiftwidth=2
+set softtabstop=2
