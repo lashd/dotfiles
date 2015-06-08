@@ -1,4 +1,9 @@
 syntax on
+" show line numbers
+set number
+
+" show right margin so we know when we are typing lines that are to long
+set colorcolumn=80
 
 " Configure vundle
 set nocompatible " be iMproved, required
