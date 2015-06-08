@@ -1,9 +1,17 @@
 syntax on
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+" Configure vundle
+set nocompatible " be iMproved, required
+filetype off  
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " tabs
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+
+" Plugins
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Chiel92/vim-autoformat'
