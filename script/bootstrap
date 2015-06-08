@@ -86,20 +86,33 @@ link_file () {
     success "linked $1 to $2"
   fi
 }
-
+findFiles (){
+  local directory=$1
+  local extension=$2
+  echo $(find -H "${directory}" -maxdepth 2 -name "${extension}")
+}
 install_dotfiles () {
   info 'installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink')
+  for src in $(findFiles "${DOTFILES_ROOT}" "*.symlink")
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
 }
 
+run_setup () {
+  info 'running setup'
+  for src in $(findFiles "${DOTFILES_ROOT}" "setup.sh")
+  do
+    bash "${src}"
+  done
+}
+
 install_dotfiles
+run_setup
 
 echo ''
 echo '  All installed!'
