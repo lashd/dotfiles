@@ -6,6 +6,12 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+"configure syntax highlighting and formatting
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
 " tabs
 set expandtab
 set shiftwidth=2
@@ -15,3 +21,4 @@ set softtabstop=2
 " Plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'vim-ruby/vim-ruby' "Syntax highlighting and ...
