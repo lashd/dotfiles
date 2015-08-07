@@ -1,29 +1,46 @@
-syntax on
-" show line numbers
-set number
+set nocompatible              " be iMproved, required
 
-" show right margin so we know when we are typing lines that are to long
-set colorcolumn=80
+filetype on                  " required
 
-" Configure vundle
-set nocompatible " be iMproved, required
-filetype off  
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-"configure syntax highlighting and formatting
 syntax on             " Enable syntax highlighting
+
 filetype on           " Enable filetype detection
+
 filetype indent on    " Enable filetype-specific indenting
+
 filetype plugin on    " Enable filetype-specific plugins
 
-" tabs
-set expandtab
+set tabstop=2
+
 set shiftwidth=2
-set softtabstop=2
+
+set expandtab
+
+let mapleader=","
+
+let $SWEET_VIM_RSPEC_SHOW_PASSING="true"
+
+set exrc            " enable per-directory .vimrc files
+
+set secure
+
+set number
 
 
-" Plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'vim-ruby/vim-ruby' "Syntax highlighting and ...
+
+let g:vim_tags_auto_generate = 1
+
+let g:vim_tags_use_ycm = 1
+
+
+
+" set the runtime path to include Vundle and initialize
+"
+set rtp+=~/.vim/bundle/Vundle.vim
+"
+call vundle#begin()
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-endwise'
+call vundle#end()
+filetype indent plugin on
+syntax on
