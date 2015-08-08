@@ -39,8 +39,7 @@ let g:vim_tags_use_ycm = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 "
 call vundle#begin()
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-endwise'
+source ~/.vim/config/ruby.vim
 call vundle#end()
 filetype indent plugin on
 syntax on
