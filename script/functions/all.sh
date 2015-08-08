@@ -1,3 +1,9 @@
+load_functions(){
+  local current_dir=$(dirname ${BASH_SOURCE[0]})
+  source "${current_dir}/current_dir.sh"
+  source "${current_dir}/copy_link.sh"
+}
+load_functions
 info () {
   printf "  [ \033[00;34m..\033[0m ] $1"
 }
