@@ -1,0 +1,6 @@
+current_dir=$(echo $(pwd) | sed -e 's/\/Users\/leon\///g')
+echo $current_dir
+docker run -i -t -v ~/:/home/leon 4dc22a0c060d bash -c "su -l leon -c 'pwd && cd $current_dir && vim $*'"
+
+
+

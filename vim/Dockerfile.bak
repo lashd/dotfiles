@@ -1,0 +1,8 @@
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y vim-nox git tmux openssh-server man-db
+RUN useradd leon -s /bin/bash  
+#RUN sudo  -u leon -i git clone https://github.com/lashd/dotfiles.git /home/leon/dotfiles
+#RUN sudo -u leon -i /home/leon/dotfiles/script/bootstrap
+CMD ['/etc/init.d/ssh', 'start']
+ 
