@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-TESTS_DIR="${SCRIPTS_DIR}/test"
-source "${SCRIPTS_DIR}/helpers.sh" ${SCRIPTS_DIR} "${TESTS_DIR}/resources"
+TESTS_DIR="${SCRIPTS_DIR}/../test"
+source "${TESTS_DIR}/support/helpers.sh" ${SCRIPTS_DIR}
 
 run() {
   if [ "$1" ==  "" ]

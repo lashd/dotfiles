@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-HELPERS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/helpers" && pwd )"
 SCRIPTS_DIR=$1
-RESOURCES_DIR=$2
+HELPERS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/helpers" && pwd )"
+RESOURCES_DIR="${HELPERS_DIR}/../resources"
 
 source "${HELPERS_DIR}/load_script.sh"
 source "${HELPERS_DIR}/path.sh" ${SCRIPTS_DIR}
