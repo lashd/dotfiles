@@ -4,7 +4,7 @@ RESOURCES_DIR=$1
 FAILURES=()
 
 failed() {
-  failed=true
+  FAILED=${TRUE}
   FAILURES=("${FAILURES[@]}" $1)
 }
 
@@ -35,9 +35,9 @@ run_test() {
   [[ "${test_file}" =~ .*/test/(.*) ]]
   echo ''; info "Running: ${BASH_REMATCH[1]}"; echo ${delimeter}
   $(bash "${RESOURCES_DIR}/shunit2-2.1.6/src/shunit2" "${test_file}" 1>&2)
+  [[ "$?" != "0" ]] && failed "${test_file}"
   echo ${delimeter}
 
-  [[ "$?" != "0" ]] && failed "${test_file}"
 }
 
 run_tests() {
@@ -48,6 +48,6 @@ run_tests() {
 }
 
 test_failures?() {
-  [[ "${#FAILURES[@]}" == "0" ]] && echo "${FALSE}" || echo "${TRUE}"
+  [[ "${FAILED}" == "${TRUE}" ]] && echo "${TRUE}" || echo "${FALSE}"
 }
 
