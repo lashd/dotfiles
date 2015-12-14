@@ -4,7 +4,7 @@ source "${SCRIPTS_DIR}/constants.sh"
 source "${SCRIPTS_DIR}/functions/all.sh"
 
 if [[ $(installed? docker) == ${TRUE} ]] || [[ $(installed? brew) == ${TRUE} ]]; then
-  info "all project dependencies met"
+  success "all project dependencies met"
 else
   error "Required applications not installed"
 fi

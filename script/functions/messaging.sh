@@ -3,7 +3,7 @@ info () {
 }
 
 success () {
-  say "[ \033[00;32mOK\033[0m ] $1\n"
+  say "[ \033[00;32mOK\033[0m ] $1"
 }
 
 error () {

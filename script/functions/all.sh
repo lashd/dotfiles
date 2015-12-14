@@ -4,6 +4,7 @@ load_functions(){
   source "${current_dir}/link_file.sh"
   source "${current_dir}/messaging.sh"
   source "${current_dir}/files.sh"
+  source "${current_dir}/installed.sh"
 }
 load_functions
 
