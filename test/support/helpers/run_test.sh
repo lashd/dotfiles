@@ -30,9 +30,13 @@ print_test_failures() {
 
 run_test() {
   local test_file=$1
-  [[ "${test_file}" =~ .*/test/(.*) ]] && echo ''; info "Running: ${BASH_REMATCH[1]}"
+  local delimeter="-------------------------------------"
 
+  [[ "${test_file}" =~ .*/test/(.*) ]]
+  echo ''; info "Running: ${BASH_REMATCH[1]}"; echo ${delimeter}
   $(bash "${RESOURCES_DIR}/shunit2-2.1.6/src/shunit2" "${test_file}" 1>&2)
+  echo ${delimeter}
+
   [[ "$?" != "0" ]] && failed "${test_file}"
 }
 
