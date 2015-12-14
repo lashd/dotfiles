@@ -5,9 +5,9 @@ oneTimeSetUp() {
 }
 
 testShouldReturnFalse () {
-  assertEquals $(installed? bash 2>/dev/null) ${TRUE}
+  assertEquals "$(installed? bash 2>/dev/null)" "${TRUE}"
 }
 
 testShouldReturnTRUE () {
-  assertEquals $(installed? invalid 2>/dev/null) ${FALSE}
+  assertEquals "$(installed? invalid 2>/dev/null)" "${FALSE}"
 }
