@@ -9,7 +9,7 @@ run() {
     load_tests "${TESTS_DIR}"
     run_tests
   else
-    $(run_test $1)
+    run_test $1
   fi
 }
 
