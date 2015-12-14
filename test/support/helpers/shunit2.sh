@@ -37,7 +37,6 @@ run_test() {
   $(bash "${RESOURCES_DIR}/shunit2-2.1.6/src/shunit2" "${test_file}" 1>&2)
   [[ "$?" != "0" ]] && failed "${test_file}"
   echo ${delimeter}
-
 }
 
 run_tests() {
