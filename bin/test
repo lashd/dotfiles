@@ -1,0 +1,6 @@
+#!/bin/bash
+current_dir=$(dirname ${BASH_SOURCE[0]})
+root_dir=$(cd ${current_dir}/.. && pwd)
+mount_site=/mnt/dotfiles
+
+docker run -v ${root_dir}:$mount_site ubuntu bash -c "'${mount_site}/script/test'"

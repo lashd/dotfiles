@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 info () {
   say "[ \033[00;34mINFO\033[0m ] $1"
 }
@@ -7,7 +8,7 @@ success () {
 }
 
 error () {
-  say "[ \033[0;31mERROR\033[0m] $1"
+  say "[ \033[0;31mERROR\033[0m ] $1"
 }
 
 say () {

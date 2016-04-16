@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+current_dir=$(dirname ${BASH_SOURCE[0]})
+scripts_dir=$(cd ${current_dir}/.. && pwd)/script
+
+source "${scripts_dir}/functions/all.sh"
+
+$(${scripts_dir}/checksum)
+if [[ $? == 0 ]]; then
+    docker pull ubuntu
+fi

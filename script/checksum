@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source "${SCRIPTS_DIR}/constants.sh"
+
+source "${SCRIPTS_DIR}/functions/constants.sh"
 source "${SCRIPTS_DIR}/functions/all.sh"
 
-if [[ $(installed? docker) == ${TRUE} ]] || [[ $(installed? brew) == ${TRUE} ]]; then
+if [[ $(installed? docker) == ${TRUE} ]] && [[ $(installed? brew) == ${TRUE} ]]; then
   success "all project dependencies met"
 else
   error "Required applications not installed"
+  exit 1
 fi
 

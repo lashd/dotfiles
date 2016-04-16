@@ -8,6 +8,6 @@ testShouldReturnFalse () {
   assertEquals "$(installed? bash 2>/dev/null)" "${TRUE}"
 }
 
-testShouldReturnTRUE () {
+testShouldReturnTrue () {
   assertEquals "$(installed? invalid 2>/dev/null)" "${FALSE}"
 }
