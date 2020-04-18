@@ -39,7 +39,10 @@ let g:vim_tags_use_ycm = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 "
 call vundle#begin()
-source ~/.vim/config/ruby.vim
+let files =  split(globpath('~/.vim/config/', '*.vim'), '\n')
+for file in files
+  execute 'source' file
+endfor
 call vundle#end()
 filetype indent plugin on
 syntax on
