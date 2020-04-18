@@ -9,7 +9,7 @@ source "${DOTFILES_ROOT}/script/functions/all.sh"
 run_teardown_files () {
   echo 'tearing down'
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name 'teardown.sh')
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 3 -name 'teardown.sh')
   do
     info "running ${src}"
     bash -e  ${src} 
