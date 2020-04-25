@@ -39,7 +39,7 @@ let g:vim_tags_use_ycm = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 "
 call vundle#begin()
-let files =  split(globpath('~/.vim/config/', '*.vim'), '\n')
+let files =  split(globpath('~/.vim/config/', '**/*.vim'), '\n')
 for file in files
   execute 'source' file
 endfor
